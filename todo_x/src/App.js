@@ -4,9 +4,11 @@ import Todo from './Todo';
 
 const style = {
   bg: `h-screen w-screen p-4 bg-gradient-to-r from-[#2F80ED] to-[#1CB5E0]`,
-  container: `bg-slate-100`,
-  header: `bg-blue-500 text-white p-4 text-center`,
-  footer: `bg-blue-500 text-white p-4 text-center fixed bottom-0 w-full`
+  container: `bg-slate-100 max-w-[500px] w-full m-auto rounded-md shadow-x`,
+  heading:'text-3xl font-bold text-center text-gray-800 p-2',
+
+  header: `bg-red-500 text-white p-4 text-center`,
+  footer: `bg-green-500 text-white p-4 text-center fixed bottom-0 w-full`
 }
 
 function App() {
@@ -15,9 +17,7 @@ function App() {
   return (
     <div className={style.bg}>
       <div className={style.container}>
-        <div className={style.header}>
           <h1 className={style.heading}>Todo App</h1>
-        </div>
         <form className={style.form}>
           <input className={style.input} type="text" placeholder="Add Todo" />
           <button className={style.button}><AiOutlinePlus size={30} /></button>
@@ -28,7 +28,8 @@ function App() {
           ))}
         </ul>
         <p className={style.count}>You have {todos.length} todos</p>
-      </div>
+        </div>
+
       <div className={style.footer}>
         <p>Footer Content</p>
       </div>
